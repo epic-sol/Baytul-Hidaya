@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+/* Prevent flash of unstyled content */
+body {
+    visibility: visible !important;
+}
+
 :root {
     --primary-green: #c4f2de;
     --primary-orange: #f2e2bd;
@@ -100,6 +105,12 @@ header {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hamburger.visible {
+    opacity: 1;
 }
 
 .hamburger span {
@@ -244,6 +255,43 @@ header {
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
+}
+
+/* Banner Tiles Section */
+.banner-tiles {
+    padding: 40px 0;
+    background: var(--white);
+}
+
+.banner-tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.banner-tile {
+    background: #333333;
+    color: var(--white);
+    padding: 30px 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.banner-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: #2a2a2a;
+}
+
+.banner-tile p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
 }
 
 /* Stats Section */
@@ -982,6 +1030,10 @@ footer {
         font-size: 2.5rem;
     }
     
+    .banner-tiles-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .stats-grid,
     .features-grid,
     .courses-grid,
@@ -1023,6 +1075,7 @@ footer {
     
     .hamburger {
         display: flex;
+        opacity: 1;
     }
     
     .hamburger.active span:nth-child(1) {
@@ -1043,6 +1096,10 @@ footer {
     
     .hero-buttons {
         flex-direction: column;
+    }
+    
+    .banner-tiles-grid {
+        grid-template-columns: 1fr;
     }
     
     .stats-grid,
@@ -1149,6 +1206,11 @@ footer {
 .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Prevent flash of invisible content */
+body {
+    visibility: visible !important;
 }
 
 /* Page Header */
@@ -1767,4 +1829,197 @@ footer {
 .faq-page .faq-cta p {
     margin-top: 15px;
     color: var(--text-light);
+}
+
+/* Why Families Choose Us Section */
+.why-families-choose {
+    padding: 80px 0;
+    background: var(--dark-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-families-choose::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(13, 110, 79, 0.95) 0%, rgba(10, 90, 63, 0.95) 100%);
+    z-index: 1;
+}
+
+.why-families-content {
+    position: relative;
+    z-index: 2;
+}
+
+.why-families-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.why-families-header .subtitle {
+    color: var(--primary-orange);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* animation: fadeInDown 0.8s ease-out; */
+}
+
+.why-families-header h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    /* animation: fadeInUp 0.8s ease-out 0.2s backwards; */
+}
+
+.why-families-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-family-card {
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.why-family-card.white-bg {
+    background: var(--white);
+}
+
+.why-family-card.orange-bg {
+    background: var(--primary-orange);
+}
+
+.why-family-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.why-family-card .card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2rem;
+    transition: var(--transition);
+}
+
+.why-family-card.white-bg .card-icon {
+    background: var(--primary-orange);
+    color: var(--text-dark);
+}
+
+.why-family-card.orange-bg .card-icon {
+    background: var(--white);
+    color: var(--dark-green);
+}
+
+.why-family-card:hover .card-icon {
+    transform: rotateY(360deg);
+}
+
+.why-family-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.why-family-card.white-bg h3 {
+    color: var(--dark-green);
+}
+
+.why-family-card.orange-bg h3 {
+    color: var(--white);
+}
+
+.why-family-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.why-family-card:nth-child(1) {
+    /* animation: slideInLeft 0.8s ease-out 0.3s backwards; */
+}
+
+.why-family-card:nth-child(2) {
+    /* animation: fadeInUp 0.8s ease-out 0.5s backwards; */
+}
+
+.why-family-card:nth-child(3) {
+    /* animation: slideInRight 0.8s ease-out 0.7s backwards; */
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design for Why Families Section */
+@media (max-width: 1024px) {
+    .why-families-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .why-families-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-families-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-families-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .why-family-card {
+        padding: 30px 25px;
+    }
 }

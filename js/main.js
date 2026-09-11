@@ -59,6 +59,12 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.animate-on-scroll').forEach(element => {
     observer.observe(element);
+    // Check if element is already in viewport on page load
+    const rect = element.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isVisible) {
+        element.classList.add('visible');
+    }
 });
 
 // Smooth scroll for anchor links
@@ -105,33 +111,41 @@ document.addEventListener('DOMContentLoaded', () => {
         heroImage.style.animationDelay = '0.3s';
     }
     
-    // Add animation classes to cards (excluding blog cards for now to prevent visibility issues)
-    document.querySelectorAll('.feature-card, .course-card, .testimonial-card').forEach((card, index) => {
-        card.classList.add('animate-on-scroll');
-        card.style.animationDelay = `${index * 0.1}s`;
+    // Add animation classes to cards only for elements below the fold
+    document.querySelectorAll('.feature-card, .course-card, .testimonial-card, .blog-card').forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const isBelowFold = rect.top > window.innerHeight;
+        
+        if (isBelowFold) {
+            card.classList.add('animate-on-scroll');
+            card.style.animationDelay = `${index * 0.1}s`;
+        }
     });
     
-    // Handle blog cards separately with immediate visibility
-    document.querySelectorAll('.blog-card').forEach((card, index) => {
-        card.classList.add('animate-on-scroll');
-        card.style.animationDelay = `${index * 0.1}s`;
-        // Force blog cards to be visible immediately to prevent disappearing
-        setTimeout(() => {
-            card.classList.add('visible');
-        }, 100 + (index * 100));
-    });
-    
-    // Add animation classes to stats
+    // Add animation classes to stats only for elements below the fold
     document.querySelectorAll('.stat-item').forEach((stat, index) => {
-        stat.classList.add('animate-on-scroll');
-        stat.style.animationDelay = `${index * 0.1}s`;
+        const rect = stat.getBoundingClientRect();
+        const isBelowFold = rect.top > window.innerHeight;
+        
+        if (isBelowFold) {
+            stat.classList.add('animate-on-scroll');
+            stat.style.animationDelay = `${index * 0.1}s`;
+        }
     });
     
-    // Add animation classes to process steps
+    // Add animation classes to process steps only for elements below the fold
     document.querySelectorAll('.process-step').forEach((step, index) => {
-        step.classList.add('animate-on-scroll');
-        step.style.animationDelay = `${index * 0.1}s`;
+        const rect = step.getBoundingClientRect();
+        const isBelowFold = rect.top > window.innerHeight;
+        
+        if (isBelowFold) {
+            step.classList.add('animate-on-scroll');
+            step.style.animationDelay = `${index * 0.1}s`;
+        }
     });
+    
+    // Don't add animate-on-scroll to why-family-card since they have CSS animations
+    // The CSS animations will handle their visibility
 });
 
 // Counter animation for stats
