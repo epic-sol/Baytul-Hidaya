@@ -153,9 +153,9 @@ All text content can be edited directly in the HTML files. Each page is well-str
 Replace the following placeholder information across all pages:
 
 - Email: contact@baytulhidaya.com
-- Phone: (+92) 301 - xxx xxxx
+- Phone: 03285264703
 - Address: Islamabad, Pakistan
-- WhatsApp: https://wa.me/message/RNBNJLRW5IJGC1
+- WhatsApp: https://wa.me/923285264703
 
 ## Social Media Links
 
