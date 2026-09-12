@@ -311,4 +311,138 @@ document.querySelectorAll('.btn-primary, .btn-secondary, .btn-whatsapp').forEach
     });
 });
 
+// Mobile-specific improvements
+// Prevent horizontal scroll on mobile
+function preventHorizontalScroll() {
+    const body = document.body;
+    const html = document.documentElement;
+    
+    // Add touch-action styles for better mobile experience
+    if ('ontouchstart' in window) {
+        body.style.touchAction = 'pan-y';
+        body.style.overscrollBehavior = 'contain';
+    }
+}
+
+// Detect mobile device
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+           (window.innerWidth <= 768);
+}
+
+// Add mobile-specific optimizations
+if (isMobileDevice()) {
+    // Reduce animations on mobile for better performance
+    document.documentElement.style.setProperty('--transition', 'all 0.2s ease');
+    
+    // Disable hover effects on touch devices
+    const style = document.createElement('style');
+    style.textContent = `
+        @media (hover: none) and (pointer: coarse) {
+            .course-card:hover,
+            .testimonial-card:hover,
+            .blog-card:hover,
+            .feature-card:hover,
+            .stat-item:hover,
+            .process-step:hover,
+            .why-item:hover,
+            .value-card:hover,
+            .team-card:hover,
+            .contact-card:hover,
+            .why-family-card:hover,
+            .why-feature-item:hover,
+            .faq-item:hover {
+                transform: none !important;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Improve tap targets on mobile
+    document.querySelectorAll('.btn-primary, .btn-secondary, .btn-whatsapp, .btn-course, .social-icons a').forEach(btn => {
+        btn.style.minHeight = '44px';
+        btn.style.minWidth = '44px';
+    });
+}
+
+// Handle viewport meta tag for mobile
+function setViewportMeta() {
+    const viewport = document.querySelector('meta[name="viewport"]');
+    if (viewport && isMobileDevice()) {
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+    }
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.querySelector('.hamburger');
+    
+    if (navMenu && navMenu.classList.contains('active') && 
+        !navMenu.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+});
+
+// Add smooth scroll offset for fixed header
+function adjustScrollPosition() {
+    const headerHeight = document.querySelector('header').offsetHeight;
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+// Handle mobile menu visibility on resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        const navMenu = document.querySelector('.nav-menu');
+        const hamburger = document.querySelector('.hamburger');
+        
+        // Close mobile menu on desktop resize
+        if (window.innerWidth > 768 && navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+        
+        // Show hamburger on mobile, hide on desktop
+        if (window.innerWidth <= 768) {
+            hamburger.style.opacity = '1';
+        } else {
+            hamburger.style.opacity = '0';
+        }
+    }, 250);
+});
+
+// Add keyboard navigation support
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const navMenu = document.querySelector('.nav-menu');
+        const hamburger = document.querySelector('.hamburger');
+        
+        if (navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    }
+});
+
+// Initialize mobile optimizations
+preventHorizontalScroll();
+setViewportMeta();
+adjustScrollPosition();
+
 console.log('BAYTUL HIDAYA website loaded successfully!');

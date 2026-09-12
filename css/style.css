@@ -2237,3 +2237,1543 @@ body {
         padding: 30px 25px;
     }
 }
+
+/* Comprehensive Mobile Responsive Design */
+
+/* Extra Large Devices (Large Desktops) */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .hero-cta-card {
+        max-width: 200px;
+    }
+}
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 992px) {
+    .container {
+        max-width: 960px;
+        padding: 0 15px;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .hero-cta-card {
+        margin: 30px auto;
+        max-width: 100%;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-image {
+        order: -1;
+    }
+    
+    .hero-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .banner-tiles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid,
+    .features-grid,
+    .courses-grid,
+    .testimonials-grid,
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .specialties-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .values-grid,
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .courses-page .courses-grid,
+    .blog-page .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .why-features-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .registration-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablets (Portrait) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 720px;
+        padding: 0 15px;
+    }
+    
+    /* Navigation */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        padding: 20px 0;
+        gap: 15px;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 10px 0;
+    }
+    
+    .hamburger {
+        display: flex;
+        opacity: 1;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .nav-cta {
+        display: none;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 120px 0 60px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero-image img {
+        max-width: 350px;
+    }
+    
+    .hero-cta-card {
+        max-width: 280px;
+    }
+    
+    /* Sections */
+    .stats {
+        padding: 40px 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .stat-item {
+        padding: 20px;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.5rem;
+    }
+    
+    .features,
+    .courses,
+    .about,
+    .process,
+    .specialties,
+    .faq,
+    .testimonials,
+    .blog,
+    .newsletter {
+        padding: 50px 0;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+    }
+    
+    /* Grid Layouts */
+    .features-grid,
+    .courses-grid,
+    .testimonials-grid,
+    .blog-grid,
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-features ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-buttons .btn-primary,
+    .cta-buttons .btn-secondary {
+        width: 100%;
+    }
+    
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    footer {
+        padding: 40px 0 20px;
+    }
+    
+    /* Page Specific */
+    .page-header {
+        padding: 120px 0 60px;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .about-page-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .values-grid,
+    .team-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .courses-page .courses-grid,
+    .blog-page .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Forms */
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+    
+    .contact-form-wrapper {
+        padding: 25px;
+    }
+    
+    /* Cards */
+    .course-card,
+    .blog-card,
+    .testimonial-card {
+        padding: 20px;
+    }
+    
+    .course-image img,
+    .blog-image img {
+        height: 180px;
+    }
+    
+    /* Buttons */
+    .btn-primary,
+    .btn-secondary,
+    .btn-whatsapp,
+    .btn-course {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    
+    /* FAQ */
+    .faq-item {
+        padding: 20px;
+    }
+    
+    .faq-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .faq-item p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Large Mobile Devices */
+@media (max-width: 576px) {
+    .container {
+        max-width: 540px;
+        padding: 0 12px;
+    }
+    
+    /* Header */
+    .navbar {
+        padding: 10px 0;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+    
+    .nav-menu {
+        top: 60px;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 100px 0 50px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 0.95rem;
+    }
+    
+    .hero-image img {
+        max-width: 300px;
+    }
+    
+    .hero-cta-card {
+        max-width: 250px;
+    }
+    
+    .cta-card-content h3 {
+        font-size: 0.7rem;
+    }
+    
+    .cta-card-content p {
+        font-size: 0.6rem;
+    }
+    
+    .cta-card-content ol li {
+        font-size: 0.6rem;
+    }
+    
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.3rem;
+    }
+    
+    .stat-item p {
+        font-size: 0.9rem;
+    }
+    
+    /* Section Headers */
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-header p {
+        font-size: 0.95rem;
+    }
+    
+    /* Features */
+    .feature-card {
+        padding: 30px 20px;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Courses */
+    .course-content {
+        padding: 20px;
+    }
+    
+    .course-content h4 {
+        font-size: 1rem;
+    }
+    
+    .course-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .course-features {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .course-features span {
+        font-size: 0.85rem;
+    }
+    
+    /* Process */
+    .process-step {
+        padding: 25px 20px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .process-step h3 {
+        font-size: 1.1rem;
+    }
+    
+    .process-step p {
+        font-size: 0.9rem;
+    }
+    
+    /* Specialties */
+    .specialty-item {
+        padding: 15px;
+    }
+    
+    .specialty-item h3 {
+        font-size: 0.9rem;
+    }
+    
+    .specialty-item span {
+        font-size: 0.85rem;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        padding: 20px 15px;
+    }
+    
+    .testimonial-card p {
+        font-size: 0.9rem;
+    }
+    
+    .testimonial-author h4 {
+        font-size: 1rem;
+    }
+    
+    .testimonial-author span {
+        font-size: 0.85rem;
+    }
+    
+    /* Blog */
+    .blog-content {
+        padding: 20px;
+    }
+    
+    .blog-content h3 {
+        font-size: 1rem;
+    }
+    
+    .blog-content p {
+        font-size: 0.85rem;
+    }
+    
+    /* About */
+    .about-content p {
+        font-size: 1rem;
+    }
+    
+    .about-stat h3 {
+        font-size: 1rem;
+    }
+    
+    .about-features ul li {
+        font-size: 0.9rem;
+    }
+    
+    /* Newsletter */
+    .newsletter-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .newsletter-content p {
+        font-size: 0.95rem;
+    }
+    
+    /* CTA */
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+    
+    .cta-content ul li {
+        font-size: 0.95rem;
+    }
+    
+    /* Footer */
+    .footer-logo img {
+        height: 50px;
+    }
+    
+    .footer-logo p {
+        font-size: 0.85rem;
+    }
+    
+    .footer-links h3,
+    .footer-contact h3,
+    .footer-social h3 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-links ul li,
+    .footer-contact ul li {
+        font-size: 0.9rem;
+    }
+    
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    /* Page Specific */
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .page-header p {
+        font-size: 0.95rem;
+    }
+    
+    .about-text h2 {
+        font-size: 1.5rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .about-text p {
+        font-size: 0.95rem;
+    }
+    
+    .value-card {
+        padding: 25px 20px;
+    }
+    
+    .value-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .value-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .value-card p {
+        font-size: 0.85rem;
+    }
+    
+    .team-card .team-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .team-card .team-info p {
+        font-size: 0.85rem;
+    }
+    
+    .why-item {
+        padding: 25px 20px;
+    }
+    
+    .why-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .why-item p {
+        font-size: 0.85rem;
+    }
+    
+    .why-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    /* Contact */
+    .contact-card {
+        padding: 25px 20px;
+    }
+    
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-card p {
+        font-size: 0.9rem;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+    
+    /* WhatsApp CTA */
+    .whatsapp-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .whatsapp-content p {
+        font-size: 1rem;
+    }
+    
+    /* Registration */
+    .hours-location {
+        padding: 30px 20px;
+    }
+    
+    .hours-location h3 {
+        font-size: 1.1rem;
+    }
+    
+    .hours-location p {
+        font-size: 0.9rem;
+    }
+    
+    /* Why Features */
+    .why-feature-item {
+        padding: 25px 20px;
+    }
+    
+    .why-feature-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .why-feature-item p {
+        font-size: 0.85rem;
+    }
+    
+    /* Why Families */
+    .why-families-header .subtitle {
+        font-size: 1rem;
+    }
+    
+    .why-families-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .why-family-card {
+        padding: 25px 20px;
+    }
+    
+    .why-family-card .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .why-family-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .why-family-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    /* Header */
+    .navbar {
+        padding: 8px 0;
+    }
+    
+    .logo img {
+        height: 45px;
+    }
+    
+    .nav-menu {
+        top: 55px;
+        padding: 15px 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 90px 0 40px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.3rem;
+    }
+    
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+    
+    .hero-buttons {
+        gap: 8px;
+    }
+    
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-image img {
+        max-width: 250px;
+    }
+    
+    .hero-cta-card {
+        max-width: 220px;
+    }
+    
+    .cta-card-content {
+        padding: 8px 6px;
+    }
+    
+    .cta-card-content h3 {
+        font-size: 0.65rem;
+    }
+    
+    .cta-card-content p {
+        font-size: 0.55rem;
+    }
+    
+    .cta-card-content ol li {
+        font-size: 0.55rem;
+    }
+    
+    .cta-card-content .btn-whatsapp-black {
+        font-size: 0.6rem;
+        padding: 4px 6px;
+    }
+    
+    /* Stats */
+    .stats {
+        padding: 30px 0;
+    }
+    
+    .stat-item {
+        padding: 15px;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.2rem;
+    }
+    
+    .stat-item p {
+        font-size: 0.85rem;
+    }
+    
+    /* Sections */
+    .features,
+    .courses,
+    .about,
+    .process,
+    .specialties,
+    .faq,
+    .testimonials,
+    .blog,
+    .newsletter {
+        padding: 40px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 30px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .section-header p {
+        font-size: 0.9rem;
+    }
+    
+    /* Grid gaps */
+    .features-grid,
+    .courses-grid,
+    .testimonials-grid,
+    .blog-grid,
+    .process-steps,
+    .specialties-grid {
+        gap: 15px;
+    }
+    
+    /* Features */
+    .feature-card {
+        padding: 25px 15px;
+    }
+    
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.85rem;
+    }
+    
+    /* Courses */
+    .course-card {
+        border-radius: 10px;
+    }
+    
+    .course-image img,
+    .blog-image img {
+        height: 150px;
+    }
+    
+    .course-content {
+        padding: 15px;
+    }
+    
+    .course-content h4 {
+        font-size: 0.9rem;
+    }
+    
+    .course-content h3 {
+        font-size: 1rem;
+    }
+    
+    .course-features span {
+        font-size: 0.8rem;
+    }
+    
+    .course-rating span {
+        font-size: 0.8rem;
+    }
+    
+    .btn-course {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    /* Process */
+    .process-step {
+        padding: 20px 15px;
+    }
+    
+    .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .process-step h3 {
+        font-size: 1rem;
+    }
+    
+    .process-step p {
+        font-size: 0.85rem;
+    }
+    
+    /* Specialties */
+    .specialty-item {
+        padding: 12px;
+    }
+    
+    .specialty-item h3 {
+        font-size: 0.85rem;
+    }
+    
+    .specialty-item span {
+        font-size: 0.8rem;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        padding: 15px 12px;
+    }
+    
+    .testimonial-card p {
+        font-size: 0.85rem;
+    }
+    
+    .testimonial-author h4 {
+        font-size: 0.95rem;
+    }
+    
+    .testimonial-author span {
+        font-size: 0.8rem;
+    }
+    
+    /* Blog */
+    .blog-card {
+        border-radius: 10px;
+    }
+    
+    .blog-content {
+        padding: 15px;
+    }
+    
+    .blog-content h3 {
+        font-size: 0.95rem;
+    }
+    
+    .blog-content p {
+        font-size: 0.8rem;
+    }
+    
+    .read-more {
+        font-size: 0.85rem;
+    }
+    
+    /* About */
+    .about-content p {
+        font-size: 0.9rem;
+    }
+    
+    .about-stat h3 {
+        font-size: 0.95rem;
+    }
+    
+    .about-features ul li {
+        font-size: 0.85rem;
+    }
+    
+    .about-cta h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* Newsletter */
+    .newsletter-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .newsletter-content p {
+        font-size: 0.9rem;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* CTA */
+    .cta-section {
+        padding: 40px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .cta-content p {
+        font-size: 0.95rem;
+    }
+    
+    .cta-content ul li {
+        font-size: 0.9rem;
+    }
+    
+    .cta-content .btn-whatsapp {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* FAQ */
+    .faq-item {
+        padding: 15px;
+    }
+    
+    .faq-item h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-item p {
+        font-size: 0.85rem;
+    }
+    
+    .faq-cta .btn-primary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 30px 0 15px;
+    }
+    
+    .footer-grid {
+        gap: 25px;
+    }
+    
+    .footer-logo img {
+        height: 45px;
+    }
+    
+    .footer-logo p {
+        font-size: 0.8rem;
+    }
+    
+    .footer-links h3,
+    .footer-contact h3,
+    .footer-social h3 {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .footer-links ul li,
+    .footer-contact ul li {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    .footer-contact .btn-whatsapp {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .social-icons {
+        gap: 10px;
+    }
+    
+    .social-icons a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
+    
+    /* Page Specific */
+    .page-header {
+        padding: 90px 0 40px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .page-header p {
+        font-size: 0.9rem;
+    }
+    
+    .about-page,
+    .courses-page,
+    .blog-page,
+    .contact-page,
+    .faq-page {
+        padding: 40px 0;
+    }
+    
+    .about-text h2 {
+        font-size: 1.3rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.1rem;
+    }
+    
+    .about-text p {
+        font-size: 0.9rem;
+    }
+    
+    .about-text ul li {
+        font-size: 0.9rem;
+        padding: 8px 0 8px 25px;
+    }
+    
+    .story-content p {
+        font-size: 0.9rem;
+    }
+    
+    .value-card {
+        padding: 20px 15px;
+    }
+    
+    .value-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .value-card h3 {
+        font-size: 1rem;
+    }
+    
+    .value-card p {
+        font-size: 0.8rem;
+    }
+    
+    .team-card .team-image img {
+        height: 200px;
+    }
+    
+    .team-info {
+        padding: 20px 15px;
+    }
+    
+    .team-info h3 {
+        font-size: 1rem;
+    }
+    
+    .team-info p {
+        font-size: 0.8rem;
+    }
+    
+    .why-item {
+        padding: 20px 15px;
+    }
+    
+    .why-item h3 {
+        font-size: 1rem;
+    }
+    
+    .why-item p {
+        font-size: 0.8rem;
+    }
+    
+    .why-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    /* Contact */
+    .contact-card {
+        padding: 20px 15px;
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .contact-card h3 {
+        font-size: 1rem;
+    }
+    
+    .contact-card p {
+        font-size: 0.85rem;
+    }
+    
+    .contact-social {
+        padding: 20px 15px;
+    }
+    
+    .contact-social h3 {
+        font-size: 1rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 20px 15px;
+    }
+    
+    .form-group {
+        gap: 6px;
+    }
+    
+    .form-group label {
+        font-size: 0.85rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+    
+    .form-group textarea {
+        min-height: 100px;
+    }
+    
+    /* WhatsApp CTA */
+    .whatsapp-cta {
+        padding: 40px 0;
+    }
+    
+    .whatsapp-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .whatsapp-content p {
+        font-size: 0.9rem;
+    }
+    
+    .whatsapp-content .btn-whatsapp {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Map */
+    .map-section {
+        padding: 40px 0;
+    }
+    
+    .map-container iframe {
+        height: 300px;
+    }
+    
+    /* Registration */
+    .registration-section {
+        padding: 40px 0;
+    }
+    
+    .hours-location {
+        padding: 25px 15px;
+    }
+    
+    .hours-location h3 {
+        font-size: 1rem;
+    }
+    
+    .hours-location p {
+        font-size: 0.85rem;
+    }
+    
+    /* Why Features */
+    .why-choose-detailed {
+        padding: 40px 0;
+    }
+    
+    .why-features-list {
+        gap: 15px;
+    }
+    
+    .why-feature-item {
+        padding: 20px 15px;
+    }
+    
+    .why-feature-item h3 {
+        font-size: 1rem;
+    }
+    
+    .why-feature-item p {
+        font-size: 0.8rem;
+    }
+    
+    /* Why Families */
+    .why-families-choose {
+        padding: 40px 0;
+    }
+    
+    .why-families-header {
+        margin-bottom: 30px;
+    }
+    
+    .why-families-header .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .why-families-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .why-families-cards {
+        gap: 20px;
+    }
+    
+    .why-family-card {
+        padding: 20px 15px;
+    }
+    
+    .why-family-card .card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .why-family-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .why-family-card p {
+        font-size: 0.85rem;
+    }
+    
+    /* Load More Button */
+    .load-more button {
+        padding: 10px 30px;
+        font-size: 0.9rem;
+    }
+    
+    /* Buttons */
+    .btn-primary,
+    .btn-secondary,
+    .btn-whatsapp {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 8px;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.1rem;
+    }
+    
+    .hero-text p {
+        font-size: 0.85rem;
+    }
+    
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .hero-image img {
+        max-width: 200px;
+    }
+    
+    .hero-cta-card {
+        max-width: 180px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .section-header p {
+        font-size: 0.85rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .stat-item p {
+        font-size: 0.8rem;
+    }
+    
+    .feature-card,
+    .course-card,
+    .blog-card,
+    .testimonial-card {
+        padding: 15px 10px;
+    }
+    
+    .course-image img,
+    .blog-image img {
+        height: 120px;
+    }
+    
+    .footer-logo img {
+        height: 40px;
+    }
+    
+    .social-icons a {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Landscape Mobile Devices */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        padding: 80px 0 40px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+    
+    .nav-menu {
+        top: 55px;
+    }
+    
+    .page-header {
+        padding: 80px 0 40px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-whatsapp:hover,
+    .btn-course:hover,
+    .social-icons a:hover,
+    .feature-card:hover,
+    .course-card:hover,
+    .blog-card:hover,
+    .testimonial-card:hover,
+    .stat-item:hover,
+    .process-step:hover,
+    .why-item:hover,
+    .value-card:hover,
+    .team-card:hover,
+    .contact-card:hover,
+    .why-family-card:hover,
+    .why-feature-item:hover,
+    .faq-item:hover {
+        transform: none;
+    }
+    
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
+        width: 100%;
+    }
+}
+
+/* High DPI/Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo img,
+    .hero-image img,
+    .course-image img,
+    .blog-image img,
+    .team-image img,
+    .about-cta img,
+    .registration-image img,
+    .mosque-image img,
+    .kid-reading-image img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Print Styles */
+@media print {
+    header,
+    .hero,
+    .newsletter,
+    footer,
+    .whatsapp-cta,
+    .cta-section,
+    .nav-cta,
+    .hamburger {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .section-header h2 {
+        font-size: 18pt;
+    }
+    
+    .course-card,
+    .blog-card,
+    .testimonial-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
