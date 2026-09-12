@@ -221,9 +221,19 @@ header {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
     align-items: center;
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hero-text {
+    text-align: center;
 }
 
 .hero-text h1 {
@@ -231,6 +241,10 @@ header {
     margin-bottom: 20px;
     color: var(--dark-green);
     line-height: 1.2;
+}
+
+.hero-text h1 .highlight-orange {
+    color: var(--primary-orange);
 }
 
 .hero-text p {
@@ -243,13 +257,125 @@ header {
     display: flex;
     gap: 15px;
     margin-top: 30px;
+    justify-content: center;
 }
 
 .hero-image img {
     width: 100%;
+    max-width: 450px;
     border-radius: 20px;
     box-shadow: var(--shadow);
     animation: float 3s ease-in-out infinite;
+}
+
+.hero-cta-card {
+    background: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    max-width: 180px;
+    margin: 0;
+}
+
+.cta-card-contact {
+    position: absolute;
+    top: -5px;
+    right: 6px;
+    width: 30px;
+    height: 30px;
+    background: var(--primary-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 0.5rem;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.cta-card-image {
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+}
+
+.cta-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta-card-content {
+    padding: 10px 8px;
+    text-align: left;
+}
+
+.cta-card-content h3 {
+    color: var(--dark-green);
+    font-size: 0.75rem;
+    margin-bottom: 3px;
+    font-weight: 700;
+}
+
+.cta-card-content p {
+    color: var(--text-light);
+    font-size: 0.65rem;
+    margin-bottom: 6px;
+    line-height: 1.1;
+}
+
+.cta-card-content ol {
+    list-style: none;
+    margin-bottom: 8px;
+    text-align: left;
+    counter-reset: item;
+}
+
+.cta-card-content ol li {
+    color: var(--text-dark);
+    font-size: 0.65rem;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-weight: 500;
+    counter-increment: item;
+}
+
+.cta-card-content ol li::before {
+    content: counter(item) ".";
+    color: var(--dark-green);
+    font-weight: 700;
+    min-width: 10px;
+}
+
+.cta-card-content ol li strong {
+    color: var(--dark-green);
+}
+
+.cta-card-content .btn-whatsapp-black {
+    width: 100%;
+    text-align: center;
+    font-size: 0.65rem;
+    padding: 5px 8px;
+    background: #1a1a1a;
+    color: var(--white);
+    border: none;
+    border-radius: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-card-content .btn-whatsapp-black:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
 @keyframes float {
@@ -1025,15 +1151,24 @@ footer {
     .hero-content {
         grid-template-columns: 1fr;
     }
-    
+
+    .hero-cta-card {
+        margin: 30px auto;
+        max-width: 100%;
+    }
+
     .hero-text h1 {
         font-size: 2.5rem;
     }
-    
+
+    .hero-image {
+        order: -1;
+    }
+
     .banner-tiles-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .stats-grid,
     .features-grid,
     .courses-grid,
@@ -1041,15 +1176,15 @@ footer {
     .blog-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .process-steps {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .specialties-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1068,34 +1203,38 @@ footer {
         box-shadow: var(--shadow);
         padding: 20px 0;
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
+
     .hamburger {
         display: flex;
         opacity: 1;
     }
-    
+
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
-    
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-    
+
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
-    
+
     .hero-text h1 {
         font-size: 2rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
+    }
+
+    .hero-image {
+        order: -1;
     }
     
     .banner-tiles-grid {

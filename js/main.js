@@ -57,16 +57,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.animate-on-scroll').forEach(element => {
-    observer.observe(element);
-    // Check if element is already in viewport on page load
-    const rect = element.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-    if (isVisible) {
-        element.classList.add('visible');
-    }
-});
-
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -96,8 +86,8 @@ if (newsletterForm) {
     });
 }
 
-// Add animation classes to elements on page load
-document.addEventListener('DOMContentLoaded', () => {
+// Function to initialize scroll animations
+function initializeScrollAnimations() {
     // Add fade-in-up animation to hero content
     const heroText = document.querySelector('.hero-text');
     const heroImage = document.querySelector('.hero-image');
@@ -146,7 +136,26 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Don't add animate-on-scroll to why-family-card since they have CSS animations
     // The CSS animations will handle their visibility
-});
+    
+    // Now set up the observer after elements have been marked with animate-on-scroll
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        observer.observe(element);
+        // Check if element is already in viewport on page load
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        if (isVisible) {
+            element.classList.add('visible');
+        }
+    });
+}
+
+// Add animation classes to elements on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeScrollAnimations);
+} else {
+    // DOM is already loaded, initialize immediately
+    initializeScrollAnimations();
+}
 
 // Counter animation for stats
 function animateCounter(element, target, duration = 2000) {
